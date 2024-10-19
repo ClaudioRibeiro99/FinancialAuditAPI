@@ -9,3 +9,7 @@
 2024-10-19 15:01:34 [INF] Transação criada e atualizada!
 2024-10-19 15:02:23 [INF] Transação criada e atualizada!
 2024-10-19 15:02:42 [INF] Transação criada e atualizada!
+2024-10-19 16:25:13 [WRN] Failed to determine the https port for redirect.
+2024-10-19 16:29:48 [WRN] Failed to determine the https port for redirect.
+2024-10-19 16:36:15 [WRN] Failed to determine the https port for redirect.
+2024-10-19 16:36:57 [INF] Transação criada e atualizada!

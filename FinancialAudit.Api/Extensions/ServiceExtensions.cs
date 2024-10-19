@@ -1,5 +1,7 @@
+using FinancialAudit.Application.Factories;
 using FinancialAudit.Application.Interfaces;
 using FinancialAudit.Application.Services;
+using FinancialAudit.Application.Strategies;
 using FinancialAudit.Domain.Interfaces;
 using FinancialAudit.Infrastructure.Persistence;
 using FinancialAudit.Infrastructure.Repositories;
@@ -23,10 +25,23 @@ public static class ServiceExtensions
     
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
+        // Repositórios
         services.AddScoped<ITransactionRepository, TransactionRepository>();
         services.AddScoped<IUserRepository, UserRepository>();
+
+        // Serviços
         services.AddScoped<ITransactionService, TransactionService>();
+        services.AddScoped<IUserService, UserService>();
+
+        // Fábrica de Estratégias
+        services.AddScoped<ITransactionStrategyFactory, TransactionStrategyFactory>();
+
+        // Estratégias registradas com chave
+        services.AddKeyedScoped<ITransactionStrategy, DepositTransactionStrategy>("Deposit");
+        services.AddKeyedScoped<ITransactionStrategy, WithdrawalTransactionStrategy>("Withdrawal");
+        services.AddKeyedScoped<ITransactionStrategy, PurchaseTransactionStrategy>("Purchase");
 
         return services;
     }
+
 }
