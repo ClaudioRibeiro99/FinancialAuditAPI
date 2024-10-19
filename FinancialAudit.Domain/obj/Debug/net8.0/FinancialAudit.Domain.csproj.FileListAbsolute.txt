@@ -1,0 +1,12 @@
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\bin\Debug\net8.0\FinancialAudit.Domain.deps.json
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\bin\Debug\net8.0\FinancialAudit.Domain.dll
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\bin\Debug\net8.0\FinancialAudit.Domain.pdb
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.AssemblyInfoInputs.cache
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.AssemblyInfo.cs
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.csproj.CoreCompileInputs.cache
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.dll
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\obj\Debug\net8.0\refint\FinancialAudit.Domain.dll
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.pdb
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\obj\Debug\net8.0\ref\FinancialAudit.Domain.dll
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.csproj.AssemblyReference.cache

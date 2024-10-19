@@ -1,0 +1,41 @@
+﻿services:
+  financialaudit-api:
+    build:
+      context: .
+      dockerfile: FinancialAudit.Api/Dockerfile
+    container_name: financialaudit-api
+    depends_on:
+      - sqlserver-db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=${CONNECTION_STRING}
+    ports:
+      - "5000:8080"
+    networks:
+      - audit-network
+    restart: always
+
+  sqlserver-db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver-db
+    environment:
+      - SA_PASSWORD=YourSimpl3Password  # Senha deve ser forte
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+    networks:
+      - audit-network
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $${SA_PASSWORD} -Q 'SELECT 1'"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  audit-network:
+    driver: bridge
+
+volumes:
+  sqlserver-data:

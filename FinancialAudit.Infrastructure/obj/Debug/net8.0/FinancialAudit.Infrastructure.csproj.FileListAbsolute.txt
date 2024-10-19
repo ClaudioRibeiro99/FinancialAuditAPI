@@ -1,0 +1,15 @@
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\bin\Debug\net8.0\FinancialAudit.Infrastructure.deps.json
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\bin\Debug\net8.0\FinancialAudit.Infrastructure.dll
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\bin\Debug\net8.0\FinancialAudit.Infrastructure.pdb
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\bin\Debug\net8.0\FinancialAudit.Domain.dll
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\bin\Debug\net8.0\FinancialAudit.Domain.pdb
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\obj\Debug\net8.0\FinancialAudit.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\obj\Debug\net8.0\FinancialAudit.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\obj\Debug\net8.0\FinancialAudit.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\obj\Debug\net8.0\FinancialAudit.Infrastructure.AssemblyInfo.cs
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\obj\Debug\net8.0\FinancialAudit.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\obj\Debug\net8.0\Financia.19FD6FAB.Up2Date
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\obj\Debug\net8.0\FinancialAudit.Infrastructure.dll
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\obj\Debug\net8.0\refint\FinancialAudit.Infrastructure.dll
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\obj\Debug\net8.0\FinancialAudit.Infrastructure.pdb
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\obj\Debug\net8.0\ref\FinancialAudit.Infrastructure.dll

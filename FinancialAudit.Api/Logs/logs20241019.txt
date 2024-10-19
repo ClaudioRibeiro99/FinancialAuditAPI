@@ -1,0 +1,2 @@
+2024-10-19 12:20:15 [WRN] Failed to determine the https port for redirect.
+2024-10-19 12:20:33 [INF] Transação criada e atualizada!

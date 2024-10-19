@@ -1,0 +1,15 @@
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Application\bin\Debug\net8.0\FinancialAudit.Application.deps.json
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Application\bin\Debug\net8.0\FinancialAudit.Application.dll
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Application\bin\Debug\net8.0\FinancialAudit.Application.pdb
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Application\bin\Debug\net8.0\FinancialAudit.Domain.dll
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Application\bin\Debug\net8.0\FinancialAudit.Domain.pdb
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Application\obj\Debug\net8.0\FinancialAudit.Application.csproj.AssemblyReference.cache
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Application\obj\Debug\net8.0\FinancialAudit.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Application\obj\Debug\net8.0\FinancialAudit.Application.AssemblyInfoInputs.cache
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Application\obj\Debug\net8.0\FinancialAudit.Application.AssemblyInfo.cs
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Application\obj\Debug\net8.0\FinancialAudit.Application.csproj.CoreCompileInputs.cache
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Application\obj\Debug\net8.0\Financia.967AC4E4.Up2Date
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Application\obj\Debug\net8.0\FinancialAudit.Application.dll
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Application\obj\Debug\net8.0\refint\FinancialAudit.Application.dll
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Application\obj\Debug\net8.0\FinancialAudit.Application.pdb
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Application\obj\Debug\net8.0\ref\FinancialAudit.Application.dll
