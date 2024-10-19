@@ -10,3 +10,4 @@ C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\obj\
 C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.pdb
 C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\obj\Debug\net8.0\ref\FinancialAudit.Domain.dll
 C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.csproj.AssemblyReference.cache
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.sourcelink.json
