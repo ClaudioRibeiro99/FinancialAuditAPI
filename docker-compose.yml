@@ -19,7 +19,7 @@
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: sqlserver-db
     environment:
-      - SA_PASSWORD=YourSimpl3Password  # Senha deve ser forte
+      - SA_PASSWORD=YourSimpl3Password
       - ACCEPT_EULA=Y
     ports:
       - "1433:1433"
