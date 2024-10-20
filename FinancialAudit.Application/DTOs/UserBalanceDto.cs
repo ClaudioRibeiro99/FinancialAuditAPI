@@ -7,7 +7,7 @@ public record UserBalanceDto
 {
     public int UserId { get; set; }
     [JsonIgnore]
-    public decimal Balance { get; set; }
+    public decimal Balance { get; init; }
     
     [JsonPropertyName("Balance")]
     public string FormattedBalance => Balance.ToString("C", new CultureInfo("pt-BR"));

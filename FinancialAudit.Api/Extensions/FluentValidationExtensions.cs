@@ -7,14 +7,12 @@ namespace FinancialAuditApi.Extensions
 {
     public static class FluentValidationExtensions
     {
-        public static IMvcBuilder AddFluentValidationConfiguration(this IMvcBuilder builder)
+        public static void AddFluentValidationConfiguration(this IMvcBuilder builder)
         {
             builder.Services.AddFluentValidationAutoValidation()
                 .AddFluentValidationClientsideAdapters();
             
             builder.Services.AddValidatorsFromAssemblyContaining<CreateTransactionValidator>();
-
-            return builder;
         }
     }
 }

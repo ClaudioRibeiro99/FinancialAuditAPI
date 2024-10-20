@@ -187,3 +187,5 @@ C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Api\bin\Deb
 C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Api\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
 C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Api\bin\Debug\net8.0\Serilog.Sinks.File.dll
 C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Api\obj\Debug\net8.0\FinancialAudit.Api.sourcelink.json
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Api\bin\Debug\net8.0\FinancialAudit.Api.xml
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Api\obj\Debug\net8.0\FinancialAudit.Api.xml

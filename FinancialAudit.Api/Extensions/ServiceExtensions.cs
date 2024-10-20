@@ -11,7 +11,7 @@ namespace FinancialAuditApi.Extensions;
 
 public static class ServiceExtensions
 {
-    public static IServiceCollection AddDatabaseConfiguration(this IServiceCollection services, IConfiguration configuration)
+    public static void AddDatabaseConfiguration(this IServiceCollection services, IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString("DefaultConnection");
         
@@ -19,11 +19,9 @@ public static class ServiceExtensions
         {
             options.UseSqlServer(connectionString);
         });
-
-        return services;
     }
     
-    public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+    public static void AddApplicationServices(this IServiceCollection services)
     {
         // Repositórios
         services.AddScoped<ITransactionRepository, TransactionRepository>();
@@ -40,8 +38,5 @@ public static class ServiceExtensions
         services.AddKeyedScoped<ITransactionStrategy, DepositTransactionStrategy>("Deposit");
         services.AddKeyedScoped<ITransactionStrategy, WithdrawalTransactionStrategy>("Withdrawal");
         services.AddKeyedScoped<ITransactionStrategy, PurchaseTransactionStrategy>("Purchase");
-
-        return services;
     }
-
 }

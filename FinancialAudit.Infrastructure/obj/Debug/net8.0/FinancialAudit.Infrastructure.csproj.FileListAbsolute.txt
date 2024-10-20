@@ -13,3 +13,4 @@ C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastruct
 C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\obj\Debug\net8.0\refint\FinancialAudit.Infrastructure.dll
 C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\obj\Debug\net8.0\FinancialAudit.Infrastructure.pdb
 C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\obj\Debug\net8.0\ref\FinancialAudit.Infrastructure.dll
+C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\obj\Debug\net8.0\FinancialAudit.Infrastructure.sourcelink.json

@@ -2,6 +2,6 @@ namespace FinancialAudit.Application.Utils;
 
 public enum ErrorType
 {
-    BussinessRule,
+    BusinessRule,
     Exception
 }
