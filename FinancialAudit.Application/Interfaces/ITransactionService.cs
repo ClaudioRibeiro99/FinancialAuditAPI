@@ -1,6 +1,5 @@
 using FinancialAudit.Application.DTOs;
 using FinancialAudit.Application.Utils;
-using FinancialAuditApi.DTOs;
 using OneOf;
 
 namespace FinancialAudit.Application.Interfaces;

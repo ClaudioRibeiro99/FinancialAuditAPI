@@ -7,7 +7,7 @@ public record TransactionDto
 {
     public int Id { get; set; }
     [JsonIgnore]
-    public decimal Amount { get; set; }
+    public decimal Amount { get; init; }
     
     [JsonPropertyName("Amount")]
     public string FormattedAmount => Amount.ToString("C", new CultureInfo("pt-BR"));

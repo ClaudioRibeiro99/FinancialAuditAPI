@@ -1,9 +1,9 @@
+using System.Diagnostics;
 using FinancialAudit.Application.DTOs;
 using FinancialAudit.Application.Interfaces;
 using FinancialAudit.Application.Utils;
 using FinancialAudit.Domain.Entities;
 using FinancialAudit.Domain.Interfaces;
-using FinancialAuditApi.DTOs;
 using Microsoft.Extensions.Logging;
 using OneOf;
 
@@ -35,14 +35,12 @@ public class TransactionService : ITransactionService
             var transactions = await _transactionRepository.GetAllAsync();
             var enumerable = transactions as Transaction[] ?? transactions.ToArray();
 
-            if (!enumerable.Any())
-                return new ReturnedWithoutData();
+            if (!enumerable.Any()) return new ReturnedWithoutData();
 
             var totalCount = enumerable.Length;
             var totalPages = (int)Math.Ceiling(totalCount / (double)pageSize);
 
-            if (pageNumber > totalPages || pageNumber < 1)
-                return new InvalidPageNumber();
+            if (pageNumber > totalPages || pageNumber < 1) return new InvalidPageNumber();
 
             var pagedTransactions = enumerable
                 .Skip((pageNumber - 1) * pageSize)
@@ -82,8 +80,11 @@ public class TransactionService : ITransactionService
             var user = await _userRepository.GetByIdAsync(userId);
 
             if (user is null)
-                return new ReturnedWithoutData();
-
+            {
+                _logger.LogInformation($"Usuário não encontrado. Id informado: {userId}");
+                return new UserNotFound();
+            }
+            
             var userBalanceDto = new UserBalanceDto
             {
                 UserId = user.Id,
@@ -107,15 +108,25 @@ public class TransactionService : ITransactionService
         {
             var user = await _userRepository.GetByIdAsync(transactionDto.UserId);
 
-            if (user is null) return new ReturnedWithoutData();
-
-            var transactionStrategy = _transactionStrategyFactory.GetStrategy(transactionDto.Type);
-            if (transactionStrategy is null)
+            if (user is null)
             {
-                return new AppError("Tipo de transação inválido", ErrorType.BussinessRule);
+                _logger.LogInformation($"Usuário não encontrado. Id informado: {transactionDto.UserId}");
+                return new UserNotFound();
             }
 
-            await transactionStrategy.ExecuteAsync(user, transactionDto.Amount);
+            var transactionStrategy = _transactionStrategyFactory.GetStrategy(transactionDto.Type);
+
+            var result = await transactionStrategy!.ExecuteAsync(user, transactionDto.Amount);
+
+            switch (result)
+            {
+                case TransactionResult.InsufficientBalance:
+                    _logger.LogInformation($"Transação não finalizada, saldo insuficiente para o usuário. Usuário: {user.Name}");
+                    return new InsufficientBalance();
+                case TransactionResult.InvalidTransaction:
+                    _logger.LogInformation($"Transação invalida. Usuário: {user.Name}");
+                    return new InternalErrorException();
+            }
 
             var transactionEntity = new Transaction
             {

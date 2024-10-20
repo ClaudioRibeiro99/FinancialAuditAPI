@@ -1,5 +1,6 @@
 using Bogus;
 using FinancialAudit.Application.Strategies;
+using FinancialAudit.Application.Utils;
 using FinancialAudit.Domain.Entities;
 
 namespace FinancialAudit.Tests;
@@ -22,13 +23,20 @@ public class PurchaseTransactionStrategyTests
     }
 
     [Fact]
-    public async Task Given_InsufficientBalance_When_Purchase_Then_ThrowsException()
+    public async Task Given_InsufficientBalance_When_Purchase_Then_ReturnsInsufficientBalance()
     {
         // Arrange
-        var user = new Faker<User>().RuleFor(u => u.Balance, 50m).Generate();
+        var user = new Faker<User>()
+            .RuleFor(u => u.Balance, 50m)
+            .Generate();
+    
         var purchaseStrategy = new PurchaseTransactionStrategy();
 
-        // Act & Assert
-        await Assert.ThrowsAsync<InvalidOperationException>(() => purchaseStrategy.ExecuteAsync(user, 100m));
+        // Act
+        var result = await purchaseStrategy.ExecuteAsync(user, 100m);
+
+        // Assert
+        Assert.Equal(TransactionResult.InsufficientBalance, result);
     }
+
 }

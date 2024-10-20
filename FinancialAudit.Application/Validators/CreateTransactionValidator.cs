@@ -1,4 +1,4 @@
-using FinancialAuditApi.DTOs;
+using FinancialAudit.Application.DTOs;
 using FluentValidation;
 
 namespace FinancialAudit.Application.Validators;
