@@ -4,6 +4,6 @@ namespace FinancialAudit.Domain.Interfaces;
 
 public interface IUserRepository
 {
-    Task<User> GetByIdAsync(int id);
+    Task<User> GetByIdAsync(Guid id);
     Task UpdateAsync(User user);
 }

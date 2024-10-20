@@ -8,8 +8,9 @@ public class CreateTransactionValidator : AbstractValidator<CreateTransactionDto
     public CreateTransactionValidator()
     {
         RuleFor(x => x.UserId)
-            .GreaterThan(0)
-            .WithMessage("UserId deve ser maior que zero.");
+            .NotNull()
+            .NotEmpty()
+            .WithMessage("UserId deve ser um GUID válido e não pode ser vazio.");
 
         RuleFor(x => x.Amount)
             .GreaterThan(0)

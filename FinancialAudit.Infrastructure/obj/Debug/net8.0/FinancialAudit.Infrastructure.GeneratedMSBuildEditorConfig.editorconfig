@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FinancialAudit.Infrastructure
-build_property.ProjectDir = C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Infrastructure\
+build_property.ProjectDir = C:\repos\FinancialAuditAPI\FinancialAudit.Infrastructure\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

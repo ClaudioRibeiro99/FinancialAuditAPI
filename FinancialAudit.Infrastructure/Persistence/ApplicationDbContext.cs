@@ -16,11 +16,20 @@ public class ApplicationDbContext : DbContext
     {
         modelBuilder.Entity<Transaction>()
             .HasOne(t => t.User)
-            .WithMany(u => u.Transactions);
+            .WithMany(u => u.Transactions)
+            .HasForeignKey(t => t.UserId);
+        
+        modelBuilder.Entity<Transaction>()
+            .Property(t => t.Id)
+            .ValueGeneratedOnAdd(); 
         
         modelBuilder.Entity<Transaction>()
             .Property(t => t.Amount)
             .HasPrecision(18, 2);
+        
+        modelBuilder.Entity<User>()
+            .Property(u => u.Id)
+            .ValueGeneratedOnAdd();
         
         modelBuilder.Entity<User>()
             .Property(u => u.Balance)

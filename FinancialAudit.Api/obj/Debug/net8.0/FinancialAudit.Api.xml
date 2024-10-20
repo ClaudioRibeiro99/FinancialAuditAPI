@@ -4,6 +4,19 @@
         <name>FinancialAudit.Api</name>
     </assembly>
     <members>
+        <member name="M:FinancialAuditApi.Controllers.FileController.ExportTransactions(FinancialAudit.Application.DTOs.ExportRequestDto)">
+            <summary>
+            Exporta as transações no formato especificado (CSV ou XLSX).
+            </summary>
+            <param name="request">O formato de exportação, por exemplo, "csv" ou "xlsx".</param>
+            <returns>Um arquivo exportado no formato solicitado.</returns>
+        </member>
+        <member name="M:FinancialAuditApi.Controllers.FileController.ImportTransactions">
+            <summary>
+            Importa transações de um arquivo enviado (futuro).
+            </summary>
+            <returns>Resultado da importação.</returns>
+        </member>
         <member name="M:FinancialAuditApi.Controllers.TransactionsController.GetAllTransactions(System.Int32,System.Int32)">
             <summary>
             Retorna uma lista paginada de transações.
@@ -51,7 +64,7 @@
             ```
             </remarks>
         </member>
-        <member name="M:FinancialAuditApi.Controllers.TransactionsController.GetUserBalance(System.Int32)">
+        <member name="M:FinancialAuditApi.Controllers.TransactionsController.GetUserBalance(System.Guid)">
             <summary>
             Retorna o saldo atual de um usuário específico.
             </summary>

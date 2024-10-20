@@ -118,7 +118,7 @@ public class TransactionsController : ControllerBase
     [HttpGet("user/{userId}/balance")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetUserBalance(int userId)
+    public async Task<IActionResult> GetUserBalance(Guid userId)
     {
         var result = await _transactionService.GetUserBalanceAsync(userId);
 

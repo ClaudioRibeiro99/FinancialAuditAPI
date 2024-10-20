@@ -30,13 +30,26 @@ public static class ServiceExtensions
         // Serviços
         services.AddScoped<ITransactionService, TransactionService>();
         services.AddScoped<IUserService, UserService>();
+        services.AddScoped<ITransactionExportService, TransactionExportService>();
 
-        // Fábrica de Estratégias
+        // Fábrica de Estratégias de Transações
         services.AddScoped<ITransactionStrategyFactory, TransactionStrategyFactory>();
 
-        // Estratégias registradas com chave
+        // Estratégias de Transação registradas com chave
         services.AddKeyedScoped<ITransactionStrategy, DepositTransactionStrategy>("Deposit");
         services.AddKeyedScoped<ITransactionStrategy, WithdrawalTransactionStrategy>("Withdrawal");
         services.AddKeyedScoped<ITransactionStrategy, PurchaseTransactionStrategy>("Purchase");
+
+        // Fábrica de Estratégias de Exportação
+        services.AddScoped<ITransactionExportStrategyFactory, TransactionExportStrategyFactory>();
+        
+        // Registro das estratégias de exportação
+        services.AddScoped<CsvTransactionExportStrategy>();
+        services.AddScoped<ExcelTransactionExportStrategy>();
+
+        // Estratégias de Exportação de Transações registradas com chave
+        services.AddKeyedScoped<ITransactionExportStrategy, CsvTransactionExportStrategy>("CSV");
+        services.AddKeyedScoped<ITransactionExportStrategy, ExcelTransactionExportStrategy>("Excel");
     }
+
 }

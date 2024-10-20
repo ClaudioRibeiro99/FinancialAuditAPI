@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Tests\\FinancialAudit.Tests.csproj": {}
+    "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Tests\\FinancialAudit.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Application\\FinancialAudit.Application.csproj": {
+    "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Application\\FinancialAudit.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Application\\FinancialAudit.Application.csproj",
+        "projectUniqueName": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Application\\FinancialAudit.Application.csproj",
         "projectName": "FinancialAudit.Application",
-        "projectPath": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Application\\FinancialAudit.Application.csproj",
+        "projectPath": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Application\\FinancialAudit.Application.csproj",
         "packagesPath": "C:\\Users\\claudio.dias\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Application\\obj\\",
+        "outputPath": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\claudio.dias\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj": {
-                "projectPath": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj"
+              "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj": {
+                "projectPath": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj"
               }
             }
           }
@@ -50,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.4.1, )"
+            },
             "FluentValidation": {
               "target": "Package",
               "version": "[11.10.0, )"
@@ -91,14 +95,14 @@
         }
       }
     },
-    "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj": {
+    "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj",
+        "projectUniqueName": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj",
         "projectName": "FinancialAudit.Domain",
-        "projectPath": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj",
+        "projectPath": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj",
         "packagesPath": "C:\\Users\\claudio.dias\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Domain\\obj\\",
+        "outputPath": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\claudio.dias\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -166,14 +170,14 @@
         }
       }
     },
-    "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Tests\\FinancialAudit.Tests.csproj": {
+    "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Tests\\FinancialAudit.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Tests\\FinancialAudit.Tests.csproj",
+        "projectUniqueName": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Tests\\FinancialAudit.Tests.csproj",
         "projectName": "FinancialAudit.Tests",
-        "projectPath": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Tests\\FinancialAudit.Tests.csproj",
+        "projectPath": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Tests\\FinancialAudit.Tests.csproj",
         "packagesPath": "C:\\Users\\claudio.dias\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Tests\\obj\\",
+        "outputPath": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\claudio.dias\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -191,11 +195,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Application\\FinancialAudit.Application.csproj": {
-                "projectPath": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Application\\FinancialAudit.Application.csproj"
+              "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Application\\FinancialAudit.Application.csproj": {
+                "projectPath": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Application\\FinancialAudit.Application.csproj"
               },
-              "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj": {
-                "projectPath": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj"
+              "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj": {
+                "projectPath": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj"
               }
             }
           }

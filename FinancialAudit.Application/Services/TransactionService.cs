@@ -73,7 +73,7 @@ public class TransactionService : ITransactionService
         }
     }
 
-    public async Task<OneOf<UserBalanceDto, AppError>> GetUserBalanceAsync(int userId)
+    public async Task<OneOf<UserBalanceDto, AppError>> GetUserBalanceAsync(Guid userId)
     {
         try
         {

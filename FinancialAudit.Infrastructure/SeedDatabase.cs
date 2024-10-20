@@ -11,27 +11,24 @@ public static class SeedDatabase
         {
             var users = new List<User>
             {
-                new User { Name = "João Paulo", Balance = 1000.00m },
-                new User { Name = "Maria Antonia", Balance = 2000.50m }
+                new User { Id = Guid.NewGuid(), Name = "Claudio Marcelo", Balance = 5000.00m },
+                new User { Id = Guid.NewGuid(), Name = "Eder Moises", Balance = 3000.00m }
             };
-
-            dbContext.Users.AddRange(users);
-            await dbContext.SaveChangesAsync();
-        }
         
-        if (!dbContext.Transactions.Any())
-        {
+            await dbContext.Users.AddRangeAsync(users);
+            await dbContext.SaveChangesAsync();
+            
             var transactions = new List<Transaction>
             {
-                new Transaction { UserId = 1, Amount = 5000.00m, Type = TransactionType.Deposit, Date = DateTime.UtcNow },
-                new Transaction { UserId = 2, Amount = 1500.00m, Type = TransactionType.Deposit, Date = DateTime.UtcNow },
-                new Transaction { UserId = 1, Amount = 100.00m, Type = TransactionType.Purchase, Date = DateTime.UtcNow },
-                new Transaction { UserId = 2, Amount = 73.20m, Type = TransactionType.Purchase, Date = DateTime.UtcNow },
-                new Transaction { UserId = 1, Amount = 27.00m, Type = TransactionType.Withdrawal, Date = DateTime.UtcNow },
-                new Transaction { UserId = 2, Amount = 15.00m, Type = TransactionType.Withdrawal, Date = DateTime.UtcNow }
+                new Transaction { UserId = users[0].Id, Amount = 5000.00m, Type = TransactionType.Deposit, Date = DateTime.UtcNow },
+                new Transaction { UserId = users[1].Id, Amount = 1500.00m, Type = TransactionType.Deposit, Date = DateTime.UtcNow },
+                new Transaction { UserId = users[0].Id, Amount = 100.00m, Type = TransactionType.Purchase, Date = DateTime.UtcNow },
+                new Transaction { UserId = users[1].Id, Amount = 73.20m, Type = TransactionType.Purchase, Date = DateTime.UtcNow },
+                new Transaction { UserId = users[0].Id, Amount = 27.00m, Type = TransactionType.Withdrawal, Date = DateTime.UtcNow },
+                new Transaction { UserId = users[1].Id, Amount = 15.00m, Type = TransactionType.Withdrawal, Date = DateTime.UtcNow }
             };
-
-            dbContext.Transactions.AddRange(transactions);
+        
+            await dbContext.Transactions.AddRangeAsync(transactions);
             await dbContext.SaveChangesAsync();
         }
     }

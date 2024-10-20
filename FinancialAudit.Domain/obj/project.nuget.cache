@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o97JC/P6qGY=",
+  "dgSpecHash": "tgwLDuuzK0w=",
   "success": true,
-  "projectFilePath": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj",
+  "projectFilePath": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\claudio.dias\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.0-rc.2.24474.1\\microsoft.entityframeworkcore.9.0.0-rc.2.24474.1.nupkg.sha512",
     "C:\\Users\\claudio.dias\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.0-rc.2.24474.1\\microsoft.entityframeworkcore.abstractions.9.0.0-rc.2.24474.1.nupkg.sha512",

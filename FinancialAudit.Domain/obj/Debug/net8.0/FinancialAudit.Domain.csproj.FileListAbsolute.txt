@@ -11,3 +11,16 @@ C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\obj\
 C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\obj\Debug\net8.0\ref\FinancialAudit.Domain.dll
 C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.csproj.AssemblyReference.cache
 C:\Users\claudio.dias\RiderProjects\FinancialAuditApi\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.sourcelink.json
+C:\repos\FinancialAuditAPI\FinancialAudit.Domain\bin\Debug\net8.0\FinancialAudit.Domain.deps.json
+C:\repos\FinancialAuditAPI\FinancialAudit.Domain\bin\Debug\net8.0\FinancialAudit.Domain.dll
+C:\repos\FinancialAuditAPI\FinancialAudit.Domain\bin\Debug\net8.0\FinancialAudit.Domain.pdb
+C:\repos\FinancialAuditAPI\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.csproj.AssemblyReference.cache
+C:\repos\FinancialAuditAPI\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\repos\FinancialAuditAPI\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.AssemblyInfoInputs.cache
+C:\repos\FinancialAuditAPI\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.AssemblyInfo.cs
+C:\repos\FinancialAuditAPI\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.csproj.CoreCompileInputs.cache
+C:\repos\FinancialAuditAPI\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.sourcelink.json
+C:\repos\FinancialAuditAPI\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.dll
+C:\repos\FinancialAuditAPI\FinancialAudit.Domain\obj\Debug\net8.0\refint\FinancialAudit.Domain.dll
+C:\repos\FinancialAuditAPI\FinancialAudit.Domain\obj\Debug\net8.0\FinancialAudit.Domain.pdb
+C:\repos\FinancialAuditAPI\FinancialAudit.Domain\obj\Debug\net8.0\ref\FinancialAudit.Domain.dll

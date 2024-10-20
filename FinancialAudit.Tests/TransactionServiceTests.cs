@@ -38,7 +38,7 @@ public class TransactionServiceTests
     {
         // Arrange
         var user = new Faker<User>().RuleFor(u => u.Balance, 100m).Generate();
-        _mockUserRepo.Setup(repo => repo.GetByIdAsync(It.IsAny<int>())).ReturnsAsync(user);
+        _mockUserRepo.Setup(repo => repo.GetByIdAsync(It.IsAny<Guid>())).ReturnsAsync(user);
 
         var depositStrategy = new Mock<ITransactionStrategy>();
         depositStrategy.Setup(s => s.ExecuteAsync(user, It.IsAny<decimal>())).ReturnsAsync(TransactionResult.Success);
@@ -50,7 +50,7 @@ public class TransactionServiceTests
         {
             Amount = 50m,
             Type = "Deposit",
-            UserId = 1
+            UserId = Guid.NewGuid()
         };
 
         // Act
@@ -66,13 +66,13 @@ public class TransactionServiceTests
     public async Task Given_InvalidUser_When_CreateTransactionAsyncCalled_Then_ReturnWithoutDataError()
     {
         // Arrange
-        _mockUserRepo.Setup(repo => repo.GetByIdAsync(It.IsAny<int>()))!.ReturnsAsync((User)null!);
+        _mockUserRepo.Setup(repo => repo.GetByIdAsync(It.IsAny<Guid>())).ReturnsAsync((User)null!);
 
         var transactionDto = new CreateTransactionDto
         {
             Amount = 50m,
             Type = "Deposit",
-            UserId = 1
+            UserId = Guid.NewGuid()
         };
 
         // Act
@@ -88,7 +88,7 @@ public class TransactionServiceTests
     {
         // Arrange
         var user = new Faker<User>().RuleFor(u => u.Balance, 30m).Generate();
-        _mockUserRepo.Setup(repo => repo.GetByIdAsync(It.IsAny<int>())).ReturnsAsync(user);
+        _mockUserRepo.Setup(repo => repo.GetByIdAsync(It.IsAny<Guid>())).ReturnsAsync(user);
 
         var withdrawalStrategy = new Mock<ITransactionStrategy>();
         withdrawalStrategy.Setup(s => s.ExecuteAsync(user, It.IsAny<decimal>())).ReturnsAsync(TransactionResult.InsufficientBalance);
@@ -98,7 +98,7 @@ public class TransactionServiceTests
         {
             Amount = 50m,
             Type = "Withdrawal",
-            UserId = 1
+            UserId = Guid.NewGuid()
         };
 
         // Act
@@ -113,8 +113,12 @@ public class TransactionServiceTests
     public async Task Given_ValidUser_When_GetUserBalanceCalled_Then_ReturnsCorrectBalance()
     {
         // Arrange
-        var user = new Faker<User>().RuleFor(u => u.Balance, 100m).Generate();
-        _mockUserRepo.Setup(repo => repo.GetByIdAsync(It.IsAny<int>())).ReturnsAsync(user);
+        var user = new Faker<User>()
+            .RuleFor(u => u.Id, Guid.NewGuid())
+            .RuleFor(u => u.Balance, 100m)
+            .Generate();
+
+        _mockUserRepo.Setup(repo => repo.GetByIdAsync(It.IsAny<Guid>())).ReturnsAsync(user);
 
         // Act
         var result = await _transactionService.GetUserBalanceAsync(user.Id);
@@ -128,10 +132,10 @@ public class TransactionServiceTests
     public async Task Given_InvalidUser_When_GetUserBalanceCalled_Then_ReturnsUserNotFoundError()
     {
         // Arrange
-        _mockUserRepo.Setup(repo => repo.GetByIdAsync(It.IsAny<int>()))!.ReturnsAsync((User)null!);
+        _mockUserRepo.Setup(repo => repo.GetByIdAsync(It.IsAny<Guid>())).ReturnsAsync((User)null!);
 
         // Act
-        var result = await _transactionService.GetUserBalanceAsync(1);
+        var result = await _transactionService.GetUserBalanceAsync(Guid.NewGuid());
 
         // Assert
         Assert.True(result.IsError());
@@ -145,7 +149,7 @@ public class TransactionServiceTests
         var transactions = new Faker<Transaction>()
             .RuleFor(t => t.Amount, f => f.Finance.Amount())
             .RuleFor(t => t.Type, f => f.PickRandom<TransactionType>())
-            .RuleFor(t => t.UserId, f => f.Random.Int(1, 100))
+            .RuleFor(t => t.UserId, f => f.Random.Guid())
             .Generate(20);
         
         _mockTransactionRepo.Setup(repo => repo.GetAllAsync()).ReturnsAsync(transactions);
@@ -167,7 +171,7 @@ public class TransactionServiceTests
         var transactions = new Faker<Transaction>()
             .RuleFor(t => t.Amount, f => f.Finance.Amount())
             .RuleFor(t => t.Type, f => f.PickRandom<TransactionType>())
-            .RuleFor(t => t.UserId, f => f.Random.Int(1, 100))
+            .RuleFor(t => t.UserId, f => f.Random.Guid())
             .Generate(20);
 
         _mockTransactionRepo.Setup(repo => repo.GetAllAsync()).ReturnsAsync(transactions);

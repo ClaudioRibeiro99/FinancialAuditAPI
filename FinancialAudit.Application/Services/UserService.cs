@@ -15,7 +15,7 @@ public class UserService : IUserService
         _userRepository = userRepository;
     }
 
-    public async Task<OneOf<UserBalanceDto, AppError>> GetUserBalanceAsync(int userId)
+    public async Task<OneOf<UserBalanceDto, AppError>> GetUserBalanceAsync(Guid userId)
     {
         var user = await _userRepository.GetByIdAsync(userId);
         if (user == null)
@@ -30,7 +30,7 @@ public class UserService : IUserService
         return userBalanceDto;
     }
 
-    public async Task<bool> UserExistsAsync(int userId)
+    public async Task<bool> UserExistsAsync(Guid userId)
     {
         var user = await _userRepository.GetByIdAsync(userId);
         return user != null;

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Infrastructure\\FinancialAudit.Infrastructure.csproj": {}
+    "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Infrastructure\\FinancialAudit.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj": {
+    "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj",
+        "projectUniqueName": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj",
         "projectName": "FinancialAudit.Domain",
-        "projectPath": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj",
+        "projectPath": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj",
         "packagesPath": "C:\\Users\\claudio.dias\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Domain\\obj\\",
+        "outputPath": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\claudio.dias\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -79,14 +79,14 @@
         }
       }
     },
-    "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Infrastructure\\FinancialAudit.Infrastructure.csproj": {
+    "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Infrastructure\\FinancialAudit.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Infrastructure\\FinancialAudit.Infrastructure.csproj",
+        "projectUniqueName": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Infrastructure\\FinancialAudit.Infrastructure.csproj",
         "projectName": "FinancialAudit.Infrastructure",
-        "projectPath": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Infrastructure\\FinancialAudit.Infrastructure.csproj",
+        "projectPath": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Infrastructure\\FinancialAudit.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\claudio.dias\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Infrastructure\\obj\\",
+        "outputPath": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\claudio.dias\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -104,8 +104,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj": {
-                "projectPath": "C:\\Users\\claudio.dias\\RiderProjects\\FinancialAuditApi\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj"
+              "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj": {
+                "projectPath": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Domain\\FinancialAudit.Domain.csproj"
               }
             }
           }
@@ -128,6 +128,12 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.0-rc.2.24474.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
