@@ -1,21 +1,30 @@
+using System.Reflection;
 using Microsoft.OpenApi.Models;
 
 namespace FinancialAuditApi.Extensions;
 
 public static class SwaggerExtensions
 {
-    public static IServiceCollection AddSwaggerConfiguration(this IServiceCollection services)
+    public static void AddSwaggerConfiguration(this IServiceCollection services)
     {
         services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo
             {
-                Title = "Financial Audit API",
-                Version = "v1"
+                Title = "Financial Audit API - Claudio Marcelo Ribeiro",
+                Version = "v1",
+                Contact = new OpenApiContact
+                {
+                    Name = "Financial Audit API",
+                    Email = "contato.claudioribeiro@gmail.com",
+                    Url = new Uri("https://github.com/ClaudioRibeiro99/FinancialAuditAPI"),
+                }
             });
+            
+            var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+            c.IncludeXmlComments(xmlPath);
         });
-
-        return services;
     }
 
     public static void UseSwaggerInDevelopment(this IApplicationBuilder app)

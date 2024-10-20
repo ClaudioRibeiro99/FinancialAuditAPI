@@ -1,8 +1,8 @@
-namespace FinancialAuditApi.DTOs;
+namespace FinancialAudit.Application.DTOs;
 
 public record CreateTransactionDto
 {
-    public required decimal Amount { get; set; }
-    public required string Type { get; set; } // Deposit, Withdrawal, Purchase
-    public required int UserId { get; set; }
+    public required decimal Amount { get; init; }
+    public required string Type { get; init; }
+    public required int UserId { get; init; }
 }

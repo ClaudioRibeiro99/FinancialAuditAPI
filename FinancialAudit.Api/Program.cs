@@ -2,25 +2,10 @@ using FinancialAuditApi.Extensions;
 using FinancialAudit.Infrastructure;
 using FinancialAudit.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
-
-builder.Host.UseSerilog((context, config) =>
-{
-    config.ReadFrom.Configuration(context.Configuration);
-});
-
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll", policy =>
-    {
-        policy.AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader();
-    });
-});
-
+builder.AddSerilogConfiguration();
+builder.Services.AddCorsConfiguration();
 builder.Services.AddDatabaseConfiguration(builder.Configuration);
 builder.Services.AddApplicationServices();
 builder.Services.AddControllers().AddFluentValidationConfiguration();
@@ -37,11 +22,9 @@ using (var scope = app.Services.CreateScope())
     await SeedDatabase.SeedAsync(dbContext);
 }
 
-
 app.UseCors("AllowAll");
 app.UseSwaggerInDevelopment();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
-
 app.Run();

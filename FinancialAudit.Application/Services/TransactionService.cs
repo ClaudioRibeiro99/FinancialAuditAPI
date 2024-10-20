@@ -1,11 +1,9 @@
-using System.Globalization;
+using System.Diagnostics;
 using FinancialAudit.Application.DTOs;
-using FinancialAudit.Application.Error;
 using FinancialAudit.Application.Interfaces;
 using FinancialAudit.Application.Utils;
 using FinancialAudit.Domain.Entities;
 using FinancialAudit.Domain.Interfaces;
-using FinancialAuditApi.DTOs;
 using Microsoft.Extensions.Logging;
 using OneOf;
 
@@ -15,65 +13,65 @@ public class TransactionService : ITransactionService
 {
     private readonly ITransactionRepository _transactionRepository;
     private readonly IUserRepository _userRepository;
+    private readonly ITransactionStrategyFactory _transactionStrategyFactory;
     private readonly ILogger<TransactionService> _logger;
 
-    public TransactionService(ITransactionRepository transactionRepository, IUserRepository userRepository, ILogger<TransactionService> logger)
+    public TransactionService(
+        ITransactionRepository transactionRepository, 
+        IUserRepository userRepository, 
+        ITransactionStrategyFactory transactionStrategyFactory,
+        ILogger<TransactionService> logger)
     {
         _transactionRepository = transactionRepository;
         _userRepository = userRepository;
+        _transactionStrategyFactory = transactionStrategyFactory;
         _logger = logger;
     }
 
     public async Task<OneOf<PaginatedResult<TransactionDto>, AppError>> GetAllTransactionsAsync(int pageNumber, int pageSize)
-{
-    try
     {
-        var transactions = await _transactionRepository.GetAllAsync();
-
-        var enumerable = transactions as Transaction[] ?? transactions.ToArray();
-        
-        if (!enumerable.Any())
-            return new ReturnedWithoutData();
-        
-        var totalCount = enumerable.Length;
-        
-        var totalPages = (int)Math.Ceiling(totalCount / (double)pageSize);
-        
-        if (pageNumber > totalPages || pageNumber < 1)
-            return new InvalidPageNumber();
-        
-        var pagedTransactions = enumerable
-            .Skip((pageNumber - 1) * pageSize)
-            .Take(pageSize)
-            .Select(t => new TransactionDto
-            {
-                Id = t.Id,
-                Amount = t.Amount,
-                Type = t.Type.ToString(),
-                Date = t.Date,
-                UserId = t.UserId
-            })
-            .ToList();
-        
-        var paginatedResult = new PaginatedResult<TransactionDto>
+        try
         {
-            Items = pagedTransactions,
-            PageNumber = pageNumber,
-            PageSize = pageSize,
-            TotalPages = totalPages,
-            TotalItems = totalCount
-        };
+            var transactions = await _transactionRepository.GetAllAsync();
+            var enumerable = transactions as Transaction[] ?? transactions.ToArray();
 
-        return paginatedResult;
+            if (!enumerable.Any()) return new ReturnedWithoutData();
+
+            var totalCount = enumerable.Length;
+            var totalPages = (int)Math.Ceiling(totalCount / (double)pageSize);
+
+            if (pageNumber > totalPages || pageNumber < 1) return new InvalidPageNumber();
+
+            var pagedTransactions = enumerable
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .Select(t => new TransactionDto
+                {
+                    Id = t.Id,
+                    Amount = t.Amount,
+                    Type = t.Type.ToString(),
+                    Date = t.Date,
+                    UserId = t.UserId
+                })
+                .ToList();
+
+            var paginatedResult = new PaginatedResult<TransactionDto>
+            {
+                Items = pagedTransactions,
+                PageNumber = pageNumber,
+                PageSize = pageSize,
+                TotalPages = totalPages,
+                TotalItems = totalCount
+            };
+
+            return paginatedResult;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Erro ao acessar o banco de dados durante a obtenção de transações");
+            return new InternalErrorException();
+        }
     }
-    catch (Exception ex)
-    {
-        _logger.LogError(ex, "Erro ao acessar o banco de dados durante a obtenção de transações");
-
-        return new DatabaseException();
-    }
-}
-
 
     public async Task<OneOf<UserBalanceDto, AppError>> GetUserBalanceAsync(int userId)
     {
@@ -82,8 +80,11 @@ public class TransactionService : ITransactionService
             var user = await _userRepository.GetByIdAsync(userId);
 
             if (user is null)
-                return new ReturnedWithoutData();
-
+            {
+                _logger.LogInformation($"Usuário não encontrado. Id informado: {userId}");
+                return new UserNotFound();
+            }
+            
             var userBalanceDto = new UserBalanceDto
             {
                 UserId = user.Id,
@@ -95,8 +96,7 @@ public class TransactionService : ITransactionService
         catch (Exception ex)
         {
             _logger.LogError(ex, "Erro ao acessar o banco de dados durante a obtenção de transações");
-
-            return new DatabaseException();
+            return new InternalErrorException();
         }
     }
 
@@ -108,10 +108,25 @@ public class TransactionService : ITransactionService
         {
             var user = await _userRepository.GetByIdAsync(transactionDto.UserId);
 
-            if (user is null) return new ReturnedWithoutData();
+            if (user is null)
+            {
+                _logger.LogInformation($"Usuário não encontrado. Id informado: {transactionDto.UserId}");
+                return new UserNotFound();
+            }
 
-            if (transactionDto.Type is "Withdrawal" or "Purchase" && user.Balance < transactionDto.Amount)
-                return new InsufficientBalance();
+            var transactionStrategy = _transactionStrategyFactory.GetStrategy(transactionDto.Type);
+
+            var result = await transactionStrategy!.ExecuteAsync(user, transactionDto.Amount);
+
+            switch (result)
+            {
+                case TransactionResult.InsufficientBalance:
+                    _logger.LogInformation($"Transação não finalizada, saldo insuficiente para o usuário. Usuário: {user.Name}");
+                    return new InsufficientBalance();
+                case TransactionResult.InvalidTransaction:
+                    _logger.LogInformation($"Transação invalida. Usuário: {user.Name}");
+                    return new InternalErrorException();
+            }
 
             var transactionEntity = new Transaction
             {
@@ -120,17 +135,6 @@ public class TransactionService : ITransactionService
                 Type = Enum.Parse<TransactionType>(transactionDto.Type),
                 UserId = transactionDto.UserId
             };
-
-            switch (transactionEntity.Type)
-            {
-                case TransactionType.Deposit:
-                    user.Balance += transactionEntity.Amount;
-                    break;
-                case TransactionType.Withdrawal:
-                case TransactionType.Purchase:
-                    user.Balance -= transactionEntity.Amount;
-                    break;
-            }
 
             await _transactionRepository.AddAsync(transactionEntity);
             await _userRepository.UpdateAsync(user);
@@ -144,9 +148,8 @@ public class TransactionService : ITransactionService
         {
             await transaction.RollbackAsync();
             _logger.LogInformation("Transação cancelada!");
-
             _logger.LogError(ex, "Erro ao processar a transação. Erro: BANCO DE DADOS");
-            return new DatabaseException();
+            return new InternalErrorException();
         }
     }
 }
