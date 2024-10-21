@@ -360,3 +360,174 @@ System.InvalidOperationException: Cannot return as T0 as result is T1
 System.InvalidOperationException: Cannot return as T0 as result is T1
    at OneOf.OneOf`2.get_AsT0()
    at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 42
+2024-10-21 11:42:22 [INF] Transação criada e atualizada!
+2024-10-21 12:13:12 [INF] Usuário não encontrado. Id informado: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+2024-10-21 12:13:51 [INF] Transação criada e atualizada!
+2024-10-21 12:14:31 [WRN] Dados inválidos na linha 2: Amount ou Date não puderam ser convertidos.
+2024-10-21 12:14:33 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.InvalidOperationException: Cannot return as T0 as result is T1
+   at OneOf.OneOf`2.get_AsT0()
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 42
+2024-10-21 12:14:46 [WRN] Dados inválidos na linha 2: Amount ou Date não puderam ser convertidos.
+2024-10-21 12:14:47 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.InvalidOperationException: Cannot return as T0 as result is T1
+   at OneOf.OneOf`2.get_AsT0()
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 42
+2024-10-21 12:14:53 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 37
+2024-10-21 12:15:52 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 37
+2024-10-21 12:16:00 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 37
+2024-10-21 12:19:25 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 37
+2024-10-21 12:22:26 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 37
+2024-10-21 12:39:10 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at FinancialAudit.Application.Validators.ImportTransactionValidator.<>c.<.ctor>b__0_1(IFormFile f) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Validators\ImportTransactionValidator.cs:line 12
+   at FluentValidation.DefaultValidatorExtensions.<>c__DisplayClass27_0`2.<Must>b__0(T x, TProperty val) in /_/src/FluentValidation/DefaultValidatorExtensions.cs:line 421
+   at FluentValidation.DefaultValidatorExtensions.<>c__DisplayClass28_0`2.<Must>b__0(T x, TProperty val, ValidationContext`1 _) in /_/src/FluentValidation/DefaultValidatorExtensions.cs:line 437
+   at FluentValidation.DefaultValidatorExtensions.<>c__DisplayClass29_0`2.<Must>b__0(T instance, TProperty property, ValidationContext`1 propertyValidatorContext) in /_/src/FluentValidation/DefaultValidatorExtensions.cs:line 453
+   at FluentValidation.Validators.PredicateValidator`2.IsValid(ValidationContext`1 context, TProperty value) in /_/src/FluentValidation/Validators/PredicateValidator.cs:line 37
+   at FluentValidation.Internal.RuleComponent`2.InvokePropertyValidator(ValidationContext`1 context, TProperty value) in /_/src/FluentValidation/Internal/RuleComponent.cs:line 92
+   at FluentValidation.Internal.RuleComponent`2.ValidateAsync(ValidationContext`1 context, TProperty value, Boolean useAsync, CancellationToken cancellation) in /_/src/FluentValidation/Internal/RuleComponent.cs:line 83
+   at FluentValidation.Internal.PropertyRule`2.ValidateAsync(ValidationContext`1 context, Boolean useAsync, CancellationToken cancellation) in /_/src/FluentValidation/Internal/PropertyRule.cs:line 156
+   at FluentValidation.AbstractValidator`1.ValidateInternalAsync(ValidationContext`1 context, Boolean useAsync, CancellationToken cancellation) in /_/src/FluentValidation/AbstractValidator.cs:line 246
+   at FluentValidation.AbstractValidator`1.Validate(ValidationContext`1 context) in /_/src/FluentValidation/AbstractValidator.cs:line 202
+   at FluentValidation.AbstractValidator`1.FluentValidation.IValidator.Validate(IValidationContext context) in /_/src/FluentValidation/AbstractValidator.cs:line 153
+   at FluentValidation.AspNetCore.FluentValidationModelValidator.Validate(ModelValidationContext mvContext) in /_/src/FluentValidation.AspNetCore/FluentValidationModelValidatorProvider.cs:line 146
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.ValidateNode()
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitComplexType(IValidationStrategy defaultStrategy)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitImplementation(ModelMetadata& metadata, String& key, Object model)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.Visit(ModelMetadata metadata, String key, Object model)
+   at FluentValidation.AspNetCore.FluentValidationVisitor.<>n__1(ModelMetadata metadata, String key, Object model, Boolean alwaysValidateAtTopLevel, Object container)
+   at FluentValidation.AspNetCore.FluentValidationVisitor.<>c__DisplayClass2_0.<Validate>g__BaseValidate|0() in /_/src/FluentValidation.AspNetCore/FluentValidationVisitor.cs:line 45
+   at FluentValidation.AspNetCore.FluentValidationVisitor.ValidateInternal(ModelMetadata metadata, String key, Object model, Func`1 continuation) in /_/src/FluentValidation.AspNetCore/FluentValidationVisitor.cs:line 63
+   at FluentValidation.AspNetCore.FluentValidationVisitor.Validate(ModelMetadata metadata, String key, Object model, Boolean alwaysValidateAtTopLevel, Object container) in /_/src/FluentValidation.AspNetCore/FluentValidationVisitor.cs:line 47
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ObjectModelValidator.Validate(ActionContext actionContext, ValidationStateDictionary validationState, String prefix, Object model, ModelMetadata metadata, Object container)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.EnforceBindRequiredAndValidate(ObjectModelValidator baseObjectValidator, ActionContext actionContext, ParameterDescriptor parameter, ModelMetadata metadata, ModelBindingContext modelBindingContext, ModelBindingResult modelBindingResult, Object container)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at FinancialAuditApi.Middlewares.ValidationExceptionMiddleware.Invoke(HttpContext context) in C:\repos\FinancialAuditAPI\FinancialAudit.Api\Middlewares\ValidationExceptionMiddleware.cs:line 21
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-21 12:52:13 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - FinancialAuditApi.Controllers.FileController.ImportTransactions (FinancialAudit.Api). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Error reading parameter(s) for action FinancialAuditApi.Controllers.FileController.ImportTransactions (FinancialAudit.Api) as [FromForm] attribute used with IFormFile. Please refer to https://github.com/domaindrivendev/Swashbuckle.AspNetCore#handle-forms-and-file-uploads for more information
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParameters(ApiDescription apiDescription, SchemaRepository schemaRespository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperation(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperation(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at FinancialAuditApi.Middlewares.ValidationExceptionMiddleware.Invoke(HttpContext context) in C:\repos\FinancialAuditAPI\FinancialAudit.Api\Middlewares\ValidationExceptionMiddleware.cs:line 21
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-21 12:53:10 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - FinancialAuditApi.Controllers.FileController.ImportTransactions (FinancialAudit.Api). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Error reading parameter(s) for action FinancialAuditApi.Controllers.FileController.ImportTransactions (FinancialAudit.Api) as [FromForm] attribute used with IFormFile. Please refer to https://github.com/domaindrivendev/Swashbuckle.AspNetCore#handle-forms-and-file-uploads for more information
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParameters(ApiDescription apiDescription, SchemaRepository schemaRespository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperation(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperation(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at FinancialAuditApi.Middlewares.ValidationExceptionMiddleware.Invoke(HttpContext context) in C:\repos\FinancialAuditAPI\FinancialAudit.Api\Middlewares\ValidationExceptionMiddleware.cs:line 21
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-21 12:55:40 [WRN] Dados inválidos na linha 2: Amount ou Date não puderam ser convertidos.
+2024-10-21 12:55:41 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.InvalidOperationException: Cannot return as T0 as result is T1
+   at OneOf.OneOf`2.get_AsT0()
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 42
+2024-10-21 13:45:14 [WRN] Erro de formatação na linha 2: String '7/10/24 20:24' was not recognized as a valid DateTime.
+2024-10-21 13:45:14 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.InvalidOperationException: Cannot return as T0 as result is T1
+   at OneOf.OneOf`2.get_AsT0()
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 42
+2024-10-21 13:45:52 [WRN] Erro de formatação na linha 3: String '8/10/24 20:24' was not recognized as a valid DateTime.
+2024-10-21 13:45:52 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.InvalidOperationException: Cannot return as T0 as result is T1
+   at OneOf.OneOf`2.get_AsT0()
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 42
+2024-10-21 13:54:53 [WRN] Erro de formatação na linha 10: Unrecognized Guid format.
+2024-10-21 13:55:00 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.InvalidOperationException: Cannot return as T0 as result is T1
+   at OneOf.OneOf`2.get_AsT0()
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 42
+2024-10-21 13:56:46 [WRN] Erro de formatação na linha 10: Unrecognized Guid format.
+2024-10-21 13:58:33 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.InvalidOperationException: Cannot return as T0 as result is T1
+   at OneOf.OneOf`2.get_AsT0()
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 42
+2024-10-21 13:58:35 [WRN] Erro de formatação na linha 10: Unrecognized Guid format.
+2024-10-21 13:58:35 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.InvalidOperationException: Cannot return as T0 as result is T1
+   at OneOf.OneOf`2.get_AsT0()
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 42
+2024-10-21 13:58:42 [WRN] Erro de formatação na linha 10: Unrecognized Guid format.
+2024-10-21 14:03:36 [WRN] Erro de formatação na linha 10: Unrecognized Guid format.
+2024-10-21 14:03:37 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.InvalidOperationException: Cannot return as T0 as result is T1
+   at OneOf.OneOf`2.get_AsT0()
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 42
+2024-10-21 14:12:43 [WRN] Erro de formatação na linha 2: The input string '1500.50' was not in a correct format.
+2024-10-21 14:12:43 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.InvalidOperationException: Cannot return as T0 as result is T1
+   at OneOf.OneOf`2.get_AsT0()
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 42
+2024-10-21 14:13:41 [WRN] Erro de formatação na linha 2: The input string '1500.50' was not in a correct format.
+2024-10-21 14:13:55 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.InvalidOperationException: Cannot return as T0 as result is T1
+   at OneOf.OneOf`2.get_AsT0()
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 42
+2024-10-21 14:14:32 [WRN] Erro de formatação na linha 2: The input string '1500.50' was not in a correct format.
+2024-10-21 14:14:34 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.InvalidOperationException: Cannot return as T0 as result is T1
+   at OneOf.OneOf`2.get_AsT0()
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 42
+2024-10-21 14:25:14 [WRN] Erro de formatação na linha 2: String '10/18/24 10:35' was not recognized as a valid DateTime.
+2024-10-21 14:25:15 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.InvalidOperationException: Cannot return as T0 as result is T1
+   at OneOf.OneOf`2.get_AsT0()
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 42
+2024-10-21 14:42:43 [WRN] Erro de formatação na linha 4: A data '10/15/24 9:20' não está em um formato válido
+2024-10-21 14:42:46 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.InvalidOperationException: Cannot return as T0 as result is T1
+   at OneOf.OneOf`2.get_AsT0()
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 42
+2024-10-21 14:58:15 [WRN] Erro de formatação na linha 9: O valor '' não está em um formato válido
+2024-10-21 14:58:17 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.InvalidOperationException: Cannot return as T0 as result is T1
+   at OneOf.OneOf`2.get_AsT0()
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format)
+2024-10-21 14:59:24 [INF] Importação concluída com sucesso. 7 transações foram ignoradas pois os usuários não existem no banco de dados.
+2024-10-21 15:32:58 [WRN] Erro de formatação na linha 9: O valor '' não está em um formato válido
+2024-10-21 15:32:58 [ERR] Erro ao acessar o banco de dados durante a obtenção de transações
+System.InvalidOperationException: Cannot return as T0 as result is T1
+   at OneOf.OneOf`2.get_AsT0()
+   at FinancialAudit.Application.Services.TransactionImportService.ImportTransactionsAsync(IFormFile file, String format) in C:\repos\FinancialAuditAPI\FinancialAudit.Application\Services\TransactionImportService.cs:line 42
+2024-10-21 15:34:51 [INF] Importação concluída com sucesso.
+2024-10-21 15:37:27 [INF] Importação concluída com sucesso.
+2024-10-21 15:41:26 [INF] Importação concluída com sucesso.
+2024-10-21 15:51:37 [INF] Importação concluída com sucesso. 10 transações foram ignoradas pois os usuários não existem no banco de dados.

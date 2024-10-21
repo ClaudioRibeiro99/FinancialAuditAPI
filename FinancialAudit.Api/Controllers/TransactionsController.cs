@@ -152,7 +152,7 @@ public class TransactionsController : ControllerBase
     /// 
     /// ```json
     /// {
-    ///     "userId": 123,
+    ///     "userId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     ///     "amount": 150.75,
     ///     "type": "Deposit"
     /// }

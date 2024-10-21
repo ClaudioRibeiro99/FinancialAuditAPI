@@ -1,6 +1,7 @@
 using FinancialAuditApi.Extensions;
 using FinancialAudit.Infrastructure;
 using FinancialAudit.Infrastructure.Persistence;
+using FinancialAuditApi.Middlewares;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,7 @@ builder.Services.AddControllers().AddFluentValidationConfiguration();
 builder.Services.AddSwaggerConfiguration();
 
 var app = builder.Build();
+app.UseMiddleware<ValidationExceptionMiddleware>();
 
 using (var scope = app.Services.CreateScope())
 {

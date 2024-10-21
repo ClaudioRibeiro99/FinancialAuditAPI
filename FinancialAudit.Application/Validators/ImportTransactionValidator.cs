@@ -12,9 +12,15 @@ public class ImportTransactionValidator : AbstractValidator<ImportTransactionReq
             .Must(f => f.Length > 0).WithMessage("O arquivo não pode estar vazio.");
 
         RuleFor(x => x.Format)
-            .NotEmpty().WithMessage("O formato é obrigatório.")
-            .Must(f => f.Equals("csv", StringComparison.OrdinalIgnoreCase) 
-                       || f.Equals("xlsx", StringComparison.OrdinalIgnoreCase))
+            .NotEmpty()
+            .WithMessage("O formato é obrigatório.")
+            .Must(BeAValidTransactionType)
             .WithMessage("Formato inválido. Deve ser 'csv' ou 'xlsx'.");
+    }
+    
+    private bool BeAValidTransactionType(string transactionType)
+    {
+        var allowedTypes = new[] { "csv", "xlsx" };
+        return allowedTypes.Contains(transactionType);
     }
 }

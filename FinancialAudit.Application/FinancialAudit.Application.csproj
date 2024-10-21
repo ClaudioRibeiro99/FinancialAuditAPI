@@ -20,4 +20,8 @@
 		<ProjectReference Include="..\FinancialAudit.Domain\FinancialAudit.Domain.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Remove="Mappings\Excel\MapFromExcelRow.cs" />
+	</ItemGroup>
+
 </Project>

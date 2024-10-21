@@ -49,9 +49,7 @@ public class TransactionImportService : ITransactionImportService
                     importedCount++;
                 }
                 else
-                {
                     ignoredCount++;
-                }
             }
             
             var message = ignoredCount > 0

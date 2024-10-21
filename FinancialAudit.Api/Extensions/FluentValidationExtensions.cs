@@ -1,3 +1,4 @@
+using FinancialAudit.Application.DTOs;
 using FinancialAudit.Application.Validators;
 using FluentValidation;
 using FluentValidation.AspNetCore;
@@ -11,8 +12,8 @@ public static class FluentValidationExtensions
         builder.Services.AddFluentValidationAutoValidation()
                         .AddFluentValidationClientsideAdapters();
             
-        builder.Services.AddValidatorsFromAssemblyContaining<CreateTransactionValidator>()
-                        .AddValidatorsFromAssemblyContaining<ExportRequestDtoValidator>()
-                        .AddValidatorsFromAssemblyContaining<ExportRequestDtoValidator>();
+        builder.Services.AddValidatorsFromAssemblyContaining<CreateTransactionValidator>();
+        builder.Services.AddValidatorsFromAssemblyContaining<CreateTransactionValidator>();
+        builder.Services.AddValidatorsFromAssemblyContaining<ImportTransactionValidator>();
     }
 }

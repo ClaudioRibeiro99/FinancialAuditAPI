@@ -10,7 +10,7 @@ public class CreateTransactionValidator : AbstractValidator<CreateTransactionDto
         RuleFor(x => x.UserId)
             .NotNull()
             .NotEmpty()
-            .WithMessage("UserId deve ser um GUID válido e não pode ser vazio.");
+            .WithMessage("UserId deve ser um GUID válido e não pode ser vazio. Enviei sempre dentro ");
 
         RuleFor(x => x.Amount)
             .GreaterThan(0)

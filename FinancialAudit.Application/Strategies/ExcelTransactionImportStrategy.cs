@@ -1,6 +1,8 @@
 using System.Globalization;
 using FinancialAudit.Application.Interfaces;
 using FinancialAudit.Application.Utils;
+using FinancialAudit.Application.Mappings;
+using FinancialAudit.Application.Mappings.Excel;
 using FinancialAudit.Domain.Entities;
 using Microsoft.Extensions.Logging;
 using OfficeOpenXml;
@@ -28,31 +30,21 @@ public class ExcelTransactionImportStrategy : ITransactionImportStrategy
         for (int row = 2; row <= worksheet.Dimension.Rows; row++)
         {
             var cells = worksheet.Cells[row, 1, row, worksheet.Dimension.Columns];
-            
-            if (Guid.TryParse(cells[row, 1].Text, out Guid userId))
+        
+            try
             {
-                if (decimal.TryParse(cells[row, 2].Text, NumberStyles.Any, new CultureInfo("pt-BR"), out decimal amount) &&
-                    DateTime.TryParseExact(cells[row, 4].Text, "d/M/yyyy HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date))
-                {
-                    var transaction = new Transaction
-                    {
-                        UserId = userId,
-                        Amount = amount,
-                        Type = Enum.Parse<TransactionType>(cells[row, 3].Text),
-                        Date = date
-                    };
-
-                    transactions.Add(transaction);
-                }
-                else
-                {
-                    _logger.LogWarning($"Dados inválidos na linha {row}: Amount ou Date não puderam ser convertidos.");
-                    return new InvalidImportFile();
-                }
+                var transaction = ExcelTransactionMap.MapFromExcelRow(cells, row);
+                
+                transactions.Add(transaction);
             }
-            else
+            catch (FormatException ex)
             {
-                _logger.LogWarning($"UserId inválido na linha {row}: {cells[row, 1].Text}");
+                _logger.LogWarning($"Erro de formatação na linha {row}: {ex.Message}");
+                return new InvalidImportFile();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Erro ao processar a linha {row}: {ex.Message}");
                 return new InvalidImportFile();
             }
         }
