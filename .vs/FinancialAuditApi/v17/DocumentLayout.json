@@ -19,7 +19,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FinancialAudit.Infrastructure",
+              "Title": "FinancialAudit.Infrastructure.csproj",
               "DocumentMoniker": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Infrastructure\\FinancialAudit.Infrastructure.csproj",
               "RelativeDocumentMoniker": "FinancialAudit.Infrastructure\\FinancialAudit.Infrastructure.csproj",
               "ToolTip": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Infrastructure\\FinancialAudit.Infrastructure.csproj",

@@ -27,6 +27,10 @@ public class ApplicationDbContext : DbContext
             .Property(t => t.Amount)
             .HasPrecision(18, 2);
         
+        modelBuilder.Entity<Transaction>()
+            .Property(t => t.IsImported)
+            .HasDefaultValue(false);
+        
         modelBuilder.Entity<User>()
             .Property(u => u.Id)
             .ValueGeneratedOnAdd();

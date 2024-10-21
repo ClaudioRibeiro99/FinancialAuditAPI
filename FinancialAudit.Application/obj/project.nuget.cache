@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "kSnofxVylvw=",
+  "dgSpecHash": "+QpmVdwxeL4=",
   "success": true,
   "projectFilePath": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Application\\FinancialAudit.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\claudio.dias\\.nuget\\packages\\csvhelper\\33.0.1\\csvhelper.33.0.1.nupkg.sha512",
     "C:\\Users\\claudio.dias\\.nuget\\packages\\epplus\\7.4.1\\epplus.7.4.1.nupkg.sha512",
     "C:\\Users\\claudio.dias\\.nuget\\packages\\epplus.interfaces\\6.1.1\\epplus.interfaces.6.1.1.nupkg.sha512",
     "C:\\Users\\claudio.dias\\.nuget\\packages\\epplus.system.drawing\\6.1.1\\epplus.system.drawing.6.1.1.nupkg.sha512",

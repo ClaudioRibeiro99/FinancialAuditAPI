@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "GHWns1Rosvc=",
+  "dgSpecHash": "aF60zzINHZM=",
   "success": true,
   "projectFilePath": "C:\\repos\\FinancialAuditAPI\\FinancialAudit.Tests\\FinancialAudit.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\claudio.dias\\.nuget\\packages\\bogus\\35.6.1\\bogus.35.6.1.nupkg.sha512",
     "C:\\Users\\claudio.dias\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\claudio.dias\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
+    "C:\\Users\\claudio.dias\\.nuget\\packages\\csvhelper\\33.0.1\\csvhelper.33.0.1.nupkg.sha512",
     "C:\\Users\\claudio.dias\\.nuget\\packages\\epplus\\7.4.1\\epplus.7.4.1.nupkg.sha512",
     "C:\\Users\\claudio.dias\\.nuget\\packages\\epplus.interfaces\\6.1.1\\epplus.interfaces.6.1.1.nupkg.sha512",
     "C:\\Users\\claudio.dias\\.nuget\\packages\\epplus.system.drawing\\6.1.1\\epplus.system.drawing.6.1.1.nupkg.sha512",

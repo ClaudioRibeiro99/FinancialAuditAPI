@@ -59,6 +59,14 @@
           }
         }
       },
+      "CsvHelper/33.0.1": {
+        "runtime": {
+          "lib/net8.0/CsvHelper.dll": {
+            "assemblyVersion": "33.0.0.0",
+            "fileVersion": "33.0.1.24"
+          }
+        }
+      },
       "EPPlus/7.4.1": {
         "dependencies": {
           "EPPlus.System.Drawing": "6.1.1",
@@ -1371,6 +1379,7 @@
       },
       "FinancialAudit.Application/1.0.0": {
         "dependencies": {
+          "CsvHelper": "33.0.1",
           "EPPlus": "7.4.1",
           "FinancialAudit.Domain": "1.0.0",
           "FluentValidation": "11.10.0",
@@ -1436,6 +1445,13 @@
       "sha512": "sha512-Sf4BoE6Q3jTgFkgBkx7qztYOFELBCo+wQgpYDwal/qJ1unBH73ywPztIJKXBXORRzAeNijsuxhk94h0TIMvfYg==",
       "path": "azure.identity/1.11.4",
       "hashPath": "azure.identity.1.11.4.nupkg.sha512"
+    },
+    "CsvHelper/33.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fev4lynklAU2A9GVMLtwarkwaanjSYB4wUqO2nOJX5hnzObORzUqVLe+bDYCUyIIRQM4o5Bsq3CcyJR89iMmEQ==",
+      "path": "csvhelper/33.0.1",
+      "hashPath": "csvhelper.33.0.1.nupkg.sha512"
     },
     "EPPlus/7.4.1": {
       "type": "package",

@@ -45,6 +45,7 @@ public class TransactionExportService : ITransactionExportService
             var strategy = _exportStrategyFactory.GetStrategy(request.Format);
 
             var fileBytes = await strategy!.ExportAsync(transactionDtos);
+            
             return fileBytes;
         }
         catch (Exception ex)

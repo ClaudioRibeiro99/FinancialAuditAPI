@@ -23,33 +23,44 @@ public static class ServiceExtensions
     
     public static void AddApplicationServices(this IServiceCollection services)
     {
-        // Repositórios
-        services.AddScoped<ITransactionRepository, TransactionRepository>();
-        services.AddScoped<IUserRepository, UserRepository>();
+    // Serviços
+    services.AddScoped<ITransactionService, TransactionService>();
+    services.AddScoped<IUserService, UserService>();
+    services.AddScoped<ITransactionExportService, TransactionExportService>();
+    services.AddScoped<ITransactionImportService, TransactionImportService>();
 
-        // Serviços
-        services.AddScoped<ITransactionService, TransactionService>();
-        services.AddScoped<IUserService, UserService>();
-        services.AddScoped<ITransactionExportService, TransactionExportService>();
+    // Estratégias de Transação registradas com chave
+    services.AddKeyedScoped<ITransactionStrategy, DepositTransactionStrategy>("Deposit");
+    services.AddKeyedScoped<ITransactionStrategy, WithdrawalTransactionStrategy>("Withdrawal");
+    services.AddKeyedScoped<ITransactionStrategy, PurchaseTransactionStrategy>("Purchase");
+    
+    // Estratégias de Exportação de Transações registradas com chave
+    services.AddKeyedScoped<ITransactionExportStrategy, CsvTransactionExportStrategy>("CSV");
+    services.AddKeyedScoped<ITransactionExportStrategy, ExcelTransactionExportStrategy>("Excel");
+    
+    // Estratégias de Importação de Transações registradas com chave
+    services.AddKeyedScoped<ITransactionImportStrategy, CsvTransactionImportStrategy>("CSV");
+    services.AddKeyedScoped<ITransactionImportStrategy, ExcelTransactionImportStrategy>("Excel");
+    
+    // Fábrica de Estratégias de Transações
+    services.AddScoped<ITransactionStrategyFactory, TransactionStrategyFactory>();
 
-        // Fábrica de Estratégias de Transações
-        services.AddScoped<ITransactionStrategyFactory, TransactionStrategyFactory>();
+    // Fábrica de Estratégias de Exportação
+    services.AddScoped<ITransactionExportStrategyFactory, TransactionExportStrategyFactory>();
+    
+    // Fábrica de Estratégias de Importação
+    services.AddScoped<ITransactionImportStrategyFactory, TransactionImportStrategyFactory>(); 
 
-        // Estratégias de Transação registradas com chave
-        services.AddKeyedScoped<ITransactionStrategy, DepositTransactionStrategy>("Deposit");
-        services.AddKeyedScoped<ITransactionStrategy, WithdrawalTransactionStrategy>("Withdrawal");
-        services.AddKeyedScoped<ITransactionStrategy, PurchaseTransactionStrategy>("Purchase");
+    // Registro das estratégias de exportação
+    services.AddScoped<CsvTransactionExportStrategy>();
+    services.AddScoped<ExcelTransactionExportStrategy>();
 
-        // Fábrica de Estratégias de Exportação
-        services.AddScoped<ITransactionExportStrategyFactory, TransactionExportStrategyFactory>();
-        
-        // Registro das estratégias de exportação
-        services.AddScoped<CsvTransactionExportStrategy>();
-        services.AddScoped<ExcelTransactionExportStrategy>();
-
-        // Estratégias de Exportação de Transações registradas com chave
-        services.AddKeyedScoped<ITransactionExportStrategy, CsvTransactionExportStrategy>("CSV");
-        services.AddKeyedScoped<ITransactionExportStrategy, ExcelTransactionExportStrategy>("Excel");
+    // Registro das estratégias de importação
+    services.AddScoped<CsvTransactionImportStrategy>();
+    services.AddScoped<ExcelTransactionImportStrategy>();
+    
+    // Repositórios
+    services.AddScoped<ITransactionRepository, TransactionRepository>();
+    services.AddScoped<IUserRepository, UserRepository>();
     }
-
 }

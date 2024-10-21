@@ -272,3 +272,4 @@ C:\repos\FinancialAuditAPI\FinancialAudit.Tests\obj\Debug\net8.0\refint\Financia
 C:\repos\FinancialAuditAPI\FinancialAudit.Tests\obj\Debug\net8.0\FinancialAudit.Tests.pdb
 C:\repos\FinancialAuditAPI\FinancialAudit.Tests\obj\Debug\net8.0\FinancialAudit.Tests.genruntimeconfig.cache
 C:\repos\FinancialAuditAPI\FinancialAudit.Tests\obj\Debug\net8.0\ref\FinancialAudit.Tests.dll
+C:\repos\FinancialAuditAPI\FinancialAudit.Tests\bin\Debug\net8.0\CsvHelper.dll

@@ -1,18 +1,18 @@
 using FinancialAudit.Application.Validators;
 using FluentValidation;
 using FluentValidation.AspNetCore;
-using Microsoft.Extensions.DependencyInjection;
 
-namespace FinancialAuditApi.Extensions
+namespace FinancialAuditApi.Extensions;
+
+public static class FluentValidationExtensions
 {
-    public static class FluentValidationExtensions
+    public static void AddFluentValidationConfiguration(this IMvcBuilder builder)
     {
-        public static void AddFluentValidationConfiguration(this IMvcBuilder builder)
-        {
-            builder.Services.AddFluentValidationAutoValidation()
-                .AddFluentValidationClientsideAdapters();
+        builder.Services.AddFluentValidationAutoValidation()
+                        .AddFluentValidationClientsideAdapters();
             
-            builder.Services.AddValidatorsFromAssemblyContaining<CreateTransactionValidator>();
-        }
+        builder.Services.AddValidatorsFromAssemblyContaining<CreateTransactionValidator>()
+                        .AddValidatorsFromAssemblyContaining<ExportRequestDtoValidator>()
+                        .AddValidatorsFromAssemblyContaining<ExportRequestDtoValidator>();
     }
 }

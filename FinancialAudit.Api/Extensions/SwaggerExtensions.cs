@@ -20,6 +20,7 @@ public static class SwaggerExtensions
                     Url = new Uri("https://github.com/ClaudioRibeiro99/FinancialAuditAPI"),
                 }
             });
+            //c.OperationFilter<SwaggerFileOperationFilter>();
             
             var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);

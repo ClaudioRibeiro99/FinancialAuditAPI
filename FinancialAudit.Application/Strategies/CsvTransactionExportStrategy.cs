@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text;
 using FinancialAudit.Application.DTOs;
 using FinancialAudit.Application.Interfaces;
@@ -10,10 +11,13 @@ public class CsvTransactionExportStrategy : ITransactionExportStrategy
     {
         var csv = new StringBuilder();
         csv.AppendLine("Id,UserId,Amount,Type,Date");
+        
+        var brtTimeZone = TimeZoneInfo.FindSystemTimeZoneById("E. South America Standard Time");
 
         foreach (var transaction in transactions)
         {
-            csv.AppendLine($"{transaction.Id},{transaction.UserId},{transaction.Amount},{transaction.Type},{transaction.Date:yyyy-MM-dd}");
+            var dateInBrazilTime = TimeZoneInfo.ConvertTimeFromUtc(transaction.Date, brtTimeZone);
+            csv.AppendLine($"{transaction.Id},{transaction.UserId},{transaction.Amount},{transaction.Type},{dateInBrazilTime.ToString("dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture)}");
         }
 
         // Simula uma operação assíncrona com Task.FromResult

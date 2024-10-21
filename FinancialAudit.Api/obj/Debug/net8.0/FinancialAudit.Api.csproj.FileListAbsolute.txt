@@ -387,3 +387,4 @@ C:\repos\FinancialAuditAPI\FinancialAudit.Api\obj\Debug\net8.0\FinancialAudit.Ap
 C:\repos\FinancialAuditAPI\FinancialAudit.Api\obj\Debug\net8.0\FinancialAudit.Api.pdb
 C:\repos\FinancialAuditAPI\FinancialAudit.Api\obj\Debug\net8.0\FinancialAudit.Api.genruntimeconfig.cache
 C:\repos\FinancialAuditAPI\FinancialAudit.Api\obj\Debug\net8.0\ref\FinancialAudit.Api.dll
+C:\repos\FinancialAuditAPI\FinancialAudit.Api\bin\Debug\net8.0\CsvHelper.dll

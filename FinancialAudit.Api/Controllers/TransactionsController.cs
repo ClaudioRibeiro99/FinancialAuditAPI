@@ -128,7 +128,7 @@ public class TransactionsController : ControllerBase
             {
                 if (error.ErrorType == ErrorType.Exception)
                     BadRequest(new ApiResponse<string?>(false, error.Detail));
-                return NotFound(new ApiResponse<string?>(false, error.Detail));;
+                return NotFound(new ApiResponse<string?>(false, error.Detail));
             }
         );
     }
