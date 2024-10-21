@@ -80,7 +80,7 @@ public class TransactionServiceTests
 
         // Assert
         Assert.True(result.IsError());
-        Assert.IsType<ReturnedWithoutData>(result.GetError());
+        Assert.IsType<UserNotFound>(result.GetError());
     }
 
     [Fact]
